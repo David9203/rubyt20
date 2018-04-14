@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  band: MyString
+  album: MyString
+  genere: MyString
+  comments: MyString
+
+two:
+  band: MyString
+  album: MyString
+  genere: MyString
+  comments: MyString
