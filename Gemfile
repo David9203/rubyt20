@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
-
+gem 'paperclip'
 gem 'jquery-rails'
 
 gem 'bootstrap-sass', '~> 3.2.0'

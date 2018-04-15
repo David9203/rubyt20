@@ -1,5 +1,15 @@
 <h2 class="text-center text-muted">Tattlove </h2>
-<%= link_to "post", posts_path%>
-<%= current_user %>
-<h3>Bienvenido <%= current_user.name %></h3>
+
+
+<% if current_user %>
+      <h3>Bienvenido <%= current_user.name %></h3>
+
+<h1><%= link_to "ingresar a posts", posts_path %> </h1>
+  <% else %>
+  <h1> Ingrese porfavor </h1>
+      <%= link_to 'Login', new_user_session_path %>
+  <% end %>
+
+
+
 <p>the time is now <%= Time.now %></p>
