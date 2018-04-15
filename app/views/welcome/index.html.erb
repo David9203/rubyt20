@@ -1,3 +1,5 @@
-<h2>Tattlove </h2>
-
+<h2 class="text-center text-muted">Tattlove </h2>
+<%= link_to "post", posts_path%>
+<%= current_user %>
+<h3>Bienvenido <%= current_user.name %></h3>
 <p>the time is now <%= Time.now %></p>
