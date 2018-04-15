@@ -16,8 +16,11 @@
   <% if current_user %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
      <div class=round-image-50 ><%= image_tag(current_user.avatar.url(:thumb)) %></div> 
+     <%= link_to "editar perfil", edit_user_registration_path(current_user) %> 
   <% else %>
       <%= link_to 'Login', new_user_session_path %>
+
+
   <% end %>
 
 

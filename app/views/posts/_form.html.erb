@@ -30,7 +30,9 @@
     <%= form.label :comments %>
     <%= form.text_field :comments, id: :post_comments %>
   </div>
-
+  <div class="field">
+    <%= form.file_field :avatar %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
