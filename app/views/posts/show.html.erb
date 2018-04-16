@@ -1,23 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Band:</strong>
+  <strong>nombre:</strong>
   <%= @post.band %>
 </p>
 
 <p>
-  <strong>Album:</strong>
+  <strong>lugar:</strong>
   <%= @post.album %>
 </p>
 
 <p>
-  <strong>Genere:</strong>
+  <strong>tipo:</strong>
   <%= @post.genere %>
 </p>
 
 <p>
-  <strong>Comments:</strong>
+  <strong>Comentarios:</strong>
   <%= @post.comments %>
+</p>
+
+<p>
+  <strong></strong>
+  <%= image_tag @post.avatar%>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

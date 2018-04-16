@@ -10,18 +10,44 @@
 
   <body>
 
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <li class="navbar-brand"><%= link_to 'Recomiendame un sitio', posts_path %></li>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to 'Acerca', welcome_index_path %></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+      <li><%= link_to 'fotos', welcome_show_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+
+<% if current_user %>
+      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "editar perfil", edit_user_registration_path(current_user) %> </li>
+
+     <li><div class=round-image-50 ><%= image_tag(current_user.avatar.url(:thumb)) %></div> </li>
+  <% else %>
+      <li><%= link_to 'Login', new_user_session_path %></li>
+
+  <% end %>
+
+    </ul>
+  </div>
+</nav>
+
   <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-  <% if current_user %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-     <div class=round-image-50 ><%= image_tag(current_user.avatar.url(:thumb)) %></div> 
-     <%= link_to "editar perfil", edit_user_registration_path(current_user) %> 
-  <% else %>
-      <%= link_to 'Login', new_user_session_path %>
-
-
-  <% end %>
+  
 
 
     <%= yield %>

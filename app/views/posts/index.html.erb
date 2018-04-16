@@ -1,15 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="cnt">Posts</h1>
+<h1 class="cnt">Lugares</h1>
 
-<table>
+<div class="container">
+<h4>Acá encontraras una serie de sitios recomendados por nuestros usuarios de la comunidad, la idea es no tener ningun tipo de influencia y solo escucharlas</h4>
+<br>
+<table class="table">
   <thead>
-    <tr>
-
-      <th>Band</th>
-      <th>Album</th>
-      <th>Genere</th>
-      <th>Comments</th>
+    <tr class="info">
+      <th></th>
+      <th>nombre</th>
+      <th>lugar</th>
+      <th>tipo</th>
+      <th>Comentarios</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +21,7 @@
     <% @posts.each do |post| %>
 
       <tr>
+        <td><%= image_tag post.avatar , style: 'height:50%;width:auto;' %></td>
         <td><%= post.band %></td>
         <td><%= post.album %></td>
         <td><%= post.genere %></td>
@@ -26,7 +30,6 @@
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>        
-       <td><%= image_tag post.avatar.url(:thumb, timestamp:false)%></td> 
       </tr>
       
       

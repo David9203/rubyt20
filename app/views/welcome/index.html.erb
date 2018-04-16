@@ -1,15 +1,23 @@
-<h2 class="text-center text-muted">Tattlove </h2>
+<div class="text-center text-muted">
 
 
 <% if current_user %>
-      <h3>Bienvenido <%= current_user.name %></h3>
+      <h3 class="text-muted">Bienvenido <%= current_user.name %></h3>
 
-<h1><%= link_to "ingresar a posts", posts_path %> </h1>
+      <h4 align="justify" > Este sitio fue creado para la gente que esta cansada de las recomendaciones de trip avisor y busca recomendaciones que se salgan de la influencia de precios o publicidades y solo se fije en la belleza de cada lugar como el disfrute cotidiano dejando atras la preocupación del dinero betches.</h4>
+
+<br>
+
+<%= image_tag("img.jpg",height: '325', width: '946')%>
+<br>
+
+<h4><%= link_to "ingresar a posts", posts_path %> </h4>
 
   <% else %>
-  <h1> Ingrese porfavor </h1>
+  <h2> Ingrese porfavor </h2>
       <%= link_to 'Login', new_user_session_path %>
   <% end %>
 
 
-<p>the time is now <%= Time.now %></p>
+<p>time<%= Time.now %></p>
+</div>
