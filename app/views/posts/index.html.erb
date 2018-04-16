@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" align="center"><%= notice %></p>
 
 <h1 class="cnt">Lugares</h1>
 
@@ -8,7 +8,8 @@
 <table class="table">
   <thead>
     <tr class="info">
-      <th></th>
+      
+      <th>imagen</th>
       <th>nombre</th>
       <th>lugar</th>
       <th>tipo</th>
@@ -21,7 +22,7 @@
     <% @posts.each do |post| %>
 
       <tr>
-        <td><%= image_tag post.avatar , style: 'height:50%;width:auto;' %></td>
+        <td><%= image_tag post.avatar , style: 'height:20%; width:auto;' %></td>
         <td><%= post.band %></td>
         <td><%= post.album %></td>
         <td><%= post.genere %></td>
