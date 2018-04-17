@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :views
   devise_for :admins
   devise_for :users
-  resources :posts
+  resources :posts do 
+    resources :coments
+  end
   root 'posts#index'
   get 'welcome/index'
   get 'welcome/show'

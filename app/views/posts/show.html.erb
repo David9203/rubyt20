@@ -25,5 +25,33 @@
   <%= image_tag @post.avatar%>
 </p>
 
+<h2>Comentarios</h2>
+<% @post.coments.each do |coment| %>
+  <p>
+    <strong>Comentarista:</strong>
+    <%= coment.comentarista %>
+  </p>
+ 
+  <p>
+    <strong>Comentario:</strong>
+    <%= coment.contenido %>
+  </p>
+<% end %>
+
+<h2>Añadir un comentario:</h2>
+<%= form_for([@post, @post.coments.build]) do |f| %>
+  <p>
+    <%= f.label :comentarista %><br>
+    <%= f.text_field :comentarista %>
+  </p>
+  <p>
+    <%= f.label :contenido %><br>
+    <%= f.text_area :contenido %>
+  </p>
+  <p>
+    <%= f.submit 'Guardar Comentario' %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
