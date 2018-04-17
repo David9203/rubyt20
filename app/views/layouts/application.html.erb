@@ -30,6 +30,13 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
 
+<li> 
+<%= if current_user.try(:admin?)
+link_to "administrar cuentas", welcome_admin_path
+end
+
+%>
+</li>
 <% if current_user %>
       <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
       <li><%= link_to "editar perfil", edit_user_registration_path(current_user) %> </li>
