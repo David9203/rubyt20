@@ -1,3 +1,5 @@
+<div id='coment_<%= coment.id%>'>
+ 
 
  <p>
     <strong>Comentarista:</strong>
@@ -10,7 +12,11 @@
   </p>
 
 <p>
+
+
   <%= link_to 'Borrar Comentario', [coment.post, coment],
-               method: :delete,
-               data: { confirm: '¿Estás seguro?' } %>
+               data: { confirm: "¿Estás #{coment.id}" }, 
+               :remote => true,
+               method: :delete %>
 </p>
+</div>

@@ -1,17 +1,21 @@
 class ComentsController < ApplicationController
+  respond_to :html, :js, :json
 
-def create
+  def create
     @post= Post.find(params[:post_id])
     @coment = @post.coments.create(comentario_params)
-    redirect_to post_path(@post)
+    #redirect_to post_path(@post
   end
  
 
   def destroy
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id]) 
     @coment = @post.coments.find(params[:id])
     @coment.destroy
-    redirect_to post_path(@post)
+    #redirect_to post_path(@post), notice: 'coment was succesfully destroyed'
+
+ 
+
   end
 
   private
@@ -19,3 +23,4 @@ def create
       params.require(:coment).permit(:comentarista, :contenido)
     end
 end
+  

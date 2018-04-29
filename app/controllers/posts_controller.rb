@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, :authenticate_user!, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { render :new }
+        format.html { render :coment }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end

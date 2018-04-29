@@ -22,7 +22,7 @@
   <tbody>
     <% @posts.each do |post| %>
 
-      <tr>
+      <tr id= '<%= post.id%>'>
         <td><%= image_tag post.avatar , style: 'height:20%; width:auto;' %></td>
         <td><%= post.band %></td>
         <td><%= post.album %></td>
@@ -31,7 +31,8 @@
         <td><%= post.comments %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?',:remote => true,
+                                     :method => :delete %></td>
                 
       </tr>
       

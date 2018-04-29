@@ -1,0 +1,7 @@
+
+$('#list_coment').bind('ajax:success', function() {
+    $('#coment_<%= @coment.id%>').fadeOut('slow');
+    console.log('<%= @coment.id%>');
+});
+
+

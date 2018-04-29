@@ -1,0 +1,18 @@
+
+$('#list_coment').append('<div id="coment_<%= @coment.id %>">'+
+ '<p>'+
+    '<strong>Comentarista:</strong>'+
+    '<%= @coment.comentarista %>'+
+  '</p>'+
+ 
+  '<p>'+
+    '<strong>Comentario:</strong>'+
+     '<%= @coment.contenido %>'+
+  '</p>'+
+
+'<p>'+
+ ' <a data-confirm="¿Estás 161" class="delete_coment" data-remote="true" rel="nofollow" data-method="delete" href="/posts/<%= @post.id %>/coments/<%= @coment.id %>">Borrar Comentario</a>'+
+'</p>'+
+'</div>');
+
+

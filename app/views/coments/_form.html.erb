@@ -1,13 +1,21 @@
-<%= form_for([@post, @post.coments.build]) do |f| %>
+<%= form_for([@post, @post.coments.build], remote: true, html: { :"data-type" => "json"}) do |f| %>
+<div >
   <p>
     <%= f.label :comentarista %><br>
     <%= f.text_field :comentarista %>
   </p>
-  <p>
+  <p>s
     <%= f.label :contenido %><br>
     <%= f.text_area :contenido %>
   </p>
   <p>
-    <%= f.submit 'Guardar Comentario' %>
+    <%= f.submit 'Guardar Comentario', class: 'create_coment' %>
   </p>
 <% end %>
+</div>
+
+
+
+
+
+
