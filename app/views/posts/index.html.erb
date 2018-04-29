@@ -1,49 +1,54 @@
 
+        <div class="view hm-white-light jarallax" data-jarallax='{"speed": 0.2}' data-jarallax-video="https://youtu.be/QOZx5T1zDf0?list=RDGMEM6ijAnFTG9nX1G-kbWBUCJAVMQOZx5T1zDf0">
+                <div class="container flex-center">
+                            <div class="text-center text-muted">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <h3 class="display-2 mb-2 wow " > Lugares para parchar en medallo </h3>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                            <br>
+                </div>
+        </div>
 
-<h1 class="cnt">Lugares</h1>
-
-<div class="container">
-<h4>Acá encontraras una serie de sitios recomendados por nuestros usuarios de la comunidad, la idea es no tener ningun tipo de influencia y solo escucharlas</h4>
 <br>
-<table class="table">
-  <thead>
-    <tr class="info">
-      
-      <th>imagen</th>
-      <th>nombre</th>
-      <th>lugar</th>
-      <th>tipo</th>
-      <th>Usuario</th>
-      <th>Comentarios</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h4 class="text-center">Acá encontraras una serie de sitios recomendados por nuestros usuarios de la comunidad, la idea es no tener ningun tipo de influencia </h4>
+<br>
+<div class="text-center"> <h4><%= link_to 'New Post', new_post_path,:class => "text-center"  %> </h4></div>
 
-  <tbody>
-    <% @posts.each do |post| %>
 
-      <tr id= '<%= post.id%>'>
-        <td><%= image_tag post.avatar , style: 'height:20%; width:auto;' %></td>
-        <td><%= post.band %></td>
-        <td><%= post.album %></td>
-        <td><%= post.genere %></td>
-        <td><%= post.user_name%></td>
-        <td><%= post.comments %></td>
-        <td><%= link_to 'Show', post %></td>
+<% @posts.each do |post| %>
+               
+<br>
+
+                <div class="text-center">
+              <td><%= image_tag post.avatar ,:class => 'division' %></td>
+                        <div class="card-body secondbase">
+                            <h4 class="card-title"><%= post.band %></h4>
+                          <p class="card-text">Por: <a class="text-danger"><b><%= post.user_name%></b></a></p>
+                             <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?',:remote => true,
                                      :method => :delete %></td>
-                
-      </tr>
-      
-      
+                        
+                    </div>
+                </div>
+ <% end %>
 
-    
-  </div>
-    <% end %>
-  </tbody>
-</table>
+<hr>
+<footer class="bg-dark text-white">
+    <div class="text-center py-2 lead">Copyright © 2018 - David Rendon </div>
+</footer>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/jarallax.js"></script>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/jarallax-video.js"></script>
+    <script> 
+        new WOW().init();
+    </script>
 
-<br>
 
-<%= link_to 'New Post', new_post_path %>
+
+
